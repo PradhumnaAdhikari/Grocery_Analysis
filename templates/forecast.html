@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <h1>Sales Forecast</h1>
+    <div class="chart-container">
+        <img src="{{ url_for('static', filename='sales_forecast.png') }}" alt="Sales Forecast">
+    </div>
+    <div class="chart-row">
+        <div class="chart-container">
+            <img src="{{ url_for('static', filename='top_10_products.png') }}" alt="Top 10 Selling Products">
+        </div>
+        <div class="chart-container">
+            <img src="{{ url_for('static', filename='top_10_products_pie.png') }}" alt="Sales Distribution of Top 10 Products">
+        </div>
+    </div>
+</body>
+</html>

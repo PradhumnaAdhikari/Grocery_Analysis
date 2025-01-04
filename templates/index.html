@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="predict-form">
+            <label for="Description">Product Description:</label>
+            <select id="Description" name="Description" required>
+                <option value="" disabled selected>Select a product</option>
+                {% for product in products %}
+                    <option value="{{ product }}">{{ product }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="Quantity">Quantity:</label>
+            <input type="number" id="Quantity" name="Quantity" step="any" required>
+            <br>
+            <label for="UnitPrice">Unit Price:</label>
+            <input type="number" id="UnitPrice" name="UnitPrice" step="any" required>
+            <br>
+            <input type="submit" value="Predict">
+        </form>
+
+        <div id="results">
+            <h3>Prediction Results</h3>
+            <table id="results-table">
+                <tr>
+                    <th>Profit Prediction</th>
+                    <td id="profit-result"></td>
+                </tr>
+                <tr>
+                    <th>Recommendations</th>
+                    <td id="recommendations-list"></td>
+                </tr>
+                <tr>
+                    <th>Days to Sell</th>
+                    <td id="days-to-sell"></td>
+                </tr>
+                <tr>
+                    <th>Purchase Probability</th>
+                    <td id="purchase-probability"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/scripts.js"></script>
+</body>
+</html>
